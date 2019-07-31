@@ -1,10 +1,15 @@
 .navbar{
     background: #288690;
     height: 50px;
-    padding: 10px;
+    padding: 0 10px;
 }
 .navbar a{
     line-height: 50px;
     color: #fff;
     text-decoration: none;
+    padding: 0 20px;
+    display: inline-block;
+}
+.navbar a.active {
+    background: #288611;
 }

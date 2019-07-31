@@ -1,8 +1,8 @@
 import HttpService from '../../Shared/HttpService/HttpsService';
 import { ORDERS_TABLE, ORDER_VIEW, ORDER_CREATE, ORDER_EDIT, ORDER_DELETE } from '../constants/orders';
 
-export const getOrders = () => {
-  return HttpService('GET', null, 'orders?order%5Bid%5D=DESC&page=1&perPage=30', ORDERS_TABLE);
+export const getOrders = (count = 30, order) => {
+  return HttpService('GET', null, `orders?page=1&perPage=${count}${order ? {order} : ''}`, ORDERS_TABLE);
 };
 
 export const createOrder = (data) => {

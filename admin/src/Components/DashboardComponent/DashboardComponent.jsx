@@ -4,7 +4,7 @@ import DataTable from 'react-data-table-component';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 
-class OrdersComponent extends Component {
+class DashboardComponent extends Component {
 
     columns = [
         {
@@ -61,12 +61,8 @@ class OrdersComponent extends Component {
         },
       ];
 
-    view = (d) => {
-        console.log(d)
-    }
-
     componentWillMount(){
-        this.props.getOrders()
+        this.props.getOrders(5, '&order%5Bitems%5D=DESC')
     }
 
     render() {
@@ -78,8 +74,7 @@ class OrdersComponent extends Component {
 
 
         return  <div>
-            <h1>Orders</h1>
-            <Link className="btn" to="orders/create">Create Order</Link>
+            <h1>Dashboard</h1>
             <DataTable
             columns={this.columns}
             data={data}
@@ -88,4 +83,4 @@ class OrdersComponent extends Component {
         </div>
     }
 }
-export default OrdersComponent;
+export default DashboardComponent;

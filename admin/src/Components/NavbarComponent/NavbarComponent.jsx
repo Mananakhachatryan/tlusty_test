@@ -9,6 +9,11 @@ class NavbarComponent extends Component {
             activeClassName="active"
             to='/'
         >Orders</NavLink>
+        <NavLink
+            exact={true}
+            activeClassName="active"
+            to='/dashboard'
+        >Dashboard</NavLink>
     </div>;
   }
 }

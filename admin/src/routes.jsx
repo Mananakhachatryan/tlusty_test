@@ -2,6 +2,8 @@ import OrdersContainer from './Containers/Orders/OrdersContainer';
 import OrderViewContainer from './Containers/Orders/OrderViewContainer/OrderViewContainer';
 import OrderCreateContainer from './Containers/Orders/OrderCreateContainer/OrderCreateContainer';
 import OrderEditContainer from './Containers/Orders/OrderEditContainer/OrderEditContainer';
+import DashboardContainer from './Containers/Dashboard/DashboardContainer';
+
 import OldExample from './Containers/OldExample/OldExample';
 
 export const Routes = [
@@ -10,6 +12,12 @@ export const Routes = [
     path: '/',
     name: 'Orders',
     component: OrdersContainer,
+  },
+  {
+    isExact: true,
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: DashboardContainer,
   },
   {
     isExact: true,
