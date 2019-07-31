@@ -62,7 +62,7 @@ class DashboardComponent extends Component {
       ];
 
     componentWillMount(){
-        this.props.getOrders(5, '&order%5Bitems%5D=DESC')
+        this.props.getOrders(5, 'order[description]=ASC&')
     }
 
     render() {

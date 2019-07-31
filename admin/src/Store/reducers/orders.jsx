@@ -1,4 +1,4 @@
-import { ORDERS_TABLE, ORDER_VIEW, ORDER_CREATE, ORDER_EDIT, ORDER_DELETE } from '../constants/orders';
+import { ORDERS_TABLE, ORDER_VIEW, ORDER_CREATE, ORDER_CREATE_ITEM, ORDER_EDIT, ORDER_DELETE } from '../constants/orders';
 
 const initialState = {
     data: [],
@@ -63,6 +63,7 @@ const autoCompleteReducer = (
             redirectSuccess: false,
             pending: true,
             success: false,
+            error: null,
         };
     case ORDER_CREATE.SUCCESS:
         return {
@@ -70,8 +71,32 @@ const autoCompleteReducer = (
             redirectSuccess: true,
             success: true,
             pending: false,
+            error: null,
         };
     case ORDER_CREATE.ERROR:
+        return {
+            ...state,
+            success: true,
+            pending: false,
+            error,
+        };
+    case ORDER_CREATE_ITEM.PENDING:
+        return {
+            ...state,
+            redirectSuccess: false,
+            pending: true,
+            success: false,
+            error: null,
+        };
+    case ORDER_CREATE_ITEM.SUCCESS:
+        return {
+            ...state,
+            redirectSuccess: true,
+            success: true,
+            pending: false,
+            error: null,
+        };
+    case ORDER_CREATE_ITEM.ERROR:
         return {
             ...state,
             success: true,
@@ -84,6 +109,7 @@ const autoCompleteReducer = (
             redirectSuccess: false,
             pending: true,
             success: false,
+            error: null,
         };
     case ORDER_EDIT.SUCCESS:
         return {
@@ -91,6 +117,7 @@ const autoCompleteReducer = (
             redirectSuccess: true,
             success: true,
             pending: false,
+            error: null,
         };
     case ORDER_EDIT.ERROR:
         return {
@@ -105,6 +132,7 @@ const autoCompleteReducer = (
             redirectSuccess: false,
             pending: true,
             success: false,
+            error: null,
         };
     case ORDER_DELETE.SUCCESS:
         return {
@@ -112,6 +140,7 @@ const autoCompleteReducer = (
             redirectSuccess: true,
             success: true,
             pending: false,
+            error: null,
         };
     case ORDER_DELETE.ERROR:
         return {

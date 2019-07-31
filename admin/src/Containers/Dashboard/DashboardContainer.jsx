@@ -7,7 +7,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getOrders: payload => dispatch(getOrders(payload)),
+  getOrders: (payload, order) => dispatch(getOrders(payload, order)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DashboardComponent);

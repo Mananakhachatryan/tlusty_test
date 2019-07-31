@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getOrders } from '../../Store/actions/orders';
+import { getOrders, editOrder } from '../../Store/actions/orders';
 import OrdersComponent from '../../Components/OrdersComponent/OrdersComponent';
 
 const mapStateToProps = state => ({
@@ -7,7 +7,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getOrders: payload => dispatch(getOrders(payload)),
+  getOrders: (payload, raw) => dispatch(getOrders(payload, raw)),
+  editOrder: (id, data) => dispatch(editOrder(id, data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(OrdersComponent);

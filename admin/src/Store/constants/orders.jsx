@@ -22,6 +22,12 @@ export const ORDER_CREATE = {
     ERROR: '@orders/ORDER_CREATE_ERROR',
 }
 
+export const ORDER_CREATE_ITEM = {
+    PENDING: '@orders/ORDER_CREATE_ITEM_PENDING',
+    SUCCESS: '@orders/ORDER_CREATE_ITEM_SUCCESS',
+    ERROR: '@orders/ORDER_CREATE_ITEM_ERROR',
+}
+
 export const ORDER_DELETE = {
     PENDING: '@orders/ORDER_DELETE_PENDING',
     SUCCESS: '@orders/ORDER_DELETE_SUCCESS',
